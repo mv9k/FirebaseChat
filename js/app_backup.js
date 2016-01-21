@@ -8,10 +8,28 @@ app.factory("chatMessages", ["$firebaseArray",
         var randomRoomId = Math.round(Math.random() * 100000000);
         var ref = new Firebase("https://blinding-fire-7673.firebaseio.com/chatroom");
 
+
         // this uses AngularFire to create the synchronized array
         return $firebaseArray(ref);
+
+
     }
 ]);
+
+app.service("authService", [
+
+    function authUser() {
+
+        var ref = new Firebase("https://blinding-fire-7673.firebasio.com/chatroom");
+
+
+    }
+
+
+
+]);
+
+app.controller("userCtrl", []);
 
 app.controller("ChatCtrl", ["$scope", "chatMessages",
     // we pass our new chatMessages factory into the controller

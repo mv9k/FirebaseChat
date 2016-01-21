@@ -10,8 +10,25 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body>
-<div ng-app="sampleApp" ng-controller="ChatCtrl">
+<body ng-app="FirebaseChatApp">
+
+
+<div ng-controller="userController">
+    <fieldset>
+    <legend><strong>LOGIN: </strong></legend>
+    <input type="text" ng-model="#" placeholder="username">
+    <input type="text" ng-model="#" placeholder="password">
+        <button ng-click="uc.authUser()">LOGIN</button>
+    </fieldset>
+</div>
+<br>
+<hr>
+<br>
+
+
+<div ng-controller="ChatController">
+    <fieldset>
+        <legend><strong>CHATROOM: </strong></legend>
     <ul class="chatbox">
         <li ng-repeat="message in messages"><span ng-class="{'red': colorSelect=='Red', 'blue': colorSelect=='Blue', 'green': colorSelect=='Green'}">{{ message.from }}: {{ message.content }}</span></li>
     </ul>
@@ -32,8 +49,12 @@
         <input type="text" ng-model="message">
         <input type="submit" value="Add Message">
     </form>
+    </fieldset>
 </div>
-
-<script src="app.js"></script>
+<script src="js/authService.js"></script>
+<script src="js/userController.js"></script>
+<script src="js/chatController.js"></script>
+<script src="js/chatFactory.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
