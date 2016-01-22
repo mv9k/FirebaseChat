@@ -61,7 +61,8 @@
             function deleteFacebookData() {
                 $localStorage.$reset();
                 vm.fbData = {};
-                vm.message = 'Facebook data deleted.';
+                vm.ghData = {};
+                vm.message = 'Data deleted.';
             }
             // bug alert: this delete function sometimes does NOT reset the local storage,
             // so a page refresh finds facebook data in localstorage.
