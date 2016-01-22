@@ -17,8 +17,10 @@
             // controller data and functions
             var vm = this;
             vm.facebookLogin = facebookLogin;
+            vm.githubLogin = githubLogin;
             vm.deleteFacebookData = deleteFacebookData;
             vm.fbData = $localStorage['firebase:session::blinding-fire-7673'];
+            vm.ghData = $localStorage['firebase:session::blinding-fire-7673'];
             // if facebook data is found in local storage, use it
             vm.message = vm.fbData && vm.fbData.facebook ? "Logged in to Facebook." : "No Facebook data found.";
             // IMPORTANT: change to match the URL of your Firebase.
@@ -41,12 +43,16 @@
             }
             function githubLogin() {
                 var ref = new Firebase(url);
-                ref.authWithOAuthPopup('github', function(error, authData) {
-                    if(error) {
+                ref.authWithOAuthPopup('github', function (error, authData) {
+                    if (error) {
                         console.log('Login Failed!', error);
                     }
                     else {
                         console.log('Authenticated successfully with payload:', authData);
+                        vm.gmessage = 'Logged in with Github.';
+                        $timeout(function() {
+                            vm.ghData = authData;
+                        });
                     }
                 });
             }
@@ -55,7 +61,8 @@
             function deleteFacebookData() {
                 $localStorage.$reset();
                 vm.fbData = {};
-                vm.message = 'Facebook data deleted.'
+                vm.ghData = {};
+                vm.message = 'Data deleted.';
             }
             // bug alert: this delete function sometimes does NOT reset the local storage,
             // so a page refresh finds facebook data in localstorage.
@@ -67,10 +74,13 @@
 <div ng-controller="MainController as vm">
 
     <button ng-click="vm.facebookLogin()">Log in with Facebook</button>
+    &nbsp; | &nbsp;
+    <button ng-click="vm.githubLogin()">Log in with Github</button>
     <button ng-click="vm.deleteFacebookData()">Delete data</button>
     <a href='https://www.facebook.com/'>Go to Facebook</a><br />
     <br />
     <div>{{ vm.message }}</div>
+    <div>{{ vm.gmessage }}</div>
     <br />
 
     <!-- click profile pic to display raw data from facebook -->
@@ -79,6 +89,9 @@
         <img ng-show="vm.fbData.facebook.profileImageURL" ng-src="{{ vm.fbData.facebook.profileImageURL }}">
     </div>
     <pre ng-show="vm.showData" ng-bind="vm.fbData.facebook | json"></pre>
+
+    <!-- Display Github info -->
+    <pre ng-bind="vm.ghData.github | json"></pre>
 
 </div>
 
