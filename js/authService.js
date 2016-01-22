@@ -8,8 +8,8 @@
 
 
     function authService($firebaseAuth) {
-        var ref = new Firebase("https://blinding-fire-7673.firebasio.com");
-        var auth = $firebaseAuth(ref);
+        var ref2 = new Firebase("https://blinding-fire-7673.firebasio.com/UserAuth");
+        var auth = $firebaseAuth(ref2);
 
         return auth;
     }
