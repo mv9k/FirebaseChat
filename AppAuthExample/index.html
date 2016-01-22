@@ -48,6 +48,7 @@
                     }
                     else {
                         console.log('Authenticated successfully with payload:', authData);
+                        vm.gmessage = 'Logged in with Github.';
                     }
                 });
             }
@@ -56,7 +57,7 @@
             function deleteFacebookData() {
                 $localStorage.$reset();
                 vm.fbData = {};
-                vm.message = 'Facebook data deleted.'
+                vm.message = 'Facebook data deleted.';
             }
             // bug alert: this delete function sometimes does NOT reset the local storage,
             // so a page refresh finds facebook data in localstorage.
@@ -74,7 +75,7 @@
     <a href='https://www.facebook.com/'>Go to Facebook</a><br />
     <br />
     <div>{{ vm.message }}</div>
-    <div>{{ vm.authData.github.id }}</div>
+    <div>{{ vm.gmessage }}</div>
     <br />
 
     <!-- click profile pic to display raw data from facebook -->
@@ -83,6 +84,9 @@
         <img ng-show="vm.fbData.facebook.profileImageURL" ng-src="{{ vm.fbData.facebook.profileImageURL }}">
     </div>
     <pre ng-show="vm.showData" ng-bind="vm.fbData.facebook | json"></pre>
+
+    <!-- Display Github info -->
+    <div>{{ vm.authData.github.id | json }}</div>
 
 </div>
 
