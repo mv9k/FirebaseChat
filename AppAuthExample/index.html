@@ -20,6 +20,7 @@
             vm.githubLogin = githubLogin;
             vm.deleteFacebookData = deleteFacebookData;
             vm.fbData = $localStorage['firebase:session::blinding-fire-7673'];
+            vm.ghData = $localStorage['firebase:session::blinding-fire-7673'];
             // if facebook data is found in local storage, use it
             vm.message = vm.fbData && vm.fbData.facebook ? "Logged in to Facebook." : "No Facebook data found.";
             // IMPORTANT: change to match the URL of your Firebase.
@@ -49,6 +50,9 @@
                     else {
                         console.log('Authenticated successfully with payload:', authData);
                         vm.gmessage = 'Logged in with Github.';
+                        $timeout(function() {
+                            vm.ghData = authData;
+                        });
                     }
                 });
             }
@@ -86,7 +90,7 @@
     <pre ng-show="vm.showData" ng-bind="vm.fbData.facebook | json"></pre>
 
     <!-- Display Github info -->
-    <pre ng-bind="vm.authData.github.username | json"></pre>
+    <pre ng-bind="vm.ghData.github.username | json"></pre>
 
 </div>
 
