@@ -1,5 +1,5 @@
 
-var app = angular.module("sampleApp", ["firebase"]);
+var app = angular.module("FirebaseChatApp", ["firebase"]);
 
 // this factory returns a synchronized array of chat messages
 app.factory("chatMessages", ["$firebaseArray",
@@ -8,11 +8,8 @@ app.factory("chatMessages", ["$firebaseArray",
         var randomRoomId = Math.round(Math.random() * 100000000);
         var ref = new Firebase("https://blinding-fire-7673.firebaseio.com/chatroom");
 
-
         // this uses AngularFire to create the synchronized array
         return $firebaseArray(ref);
-
-
     }
 ]);
 
@@ -24,8 +21,6 @@ app.service("authService", [
 
 
     }
-
-
 
 ]);
 
