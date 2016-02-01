@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="611ed2c0-26e7-4989-8a01-d62d6b4b0f48" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app_using_ngResource.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backup/chatFactory.js" afterPath="$PROJECT_DIR$/backup/chatFactory.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/chatController.js" afterPath="$PROJECT_DIR$/js/chatController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/chatFactory.js" afterPath="$PROJECT_DIR$/js/chatFactory.js" />
     </list>
     <ignored path="FirebaseChat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.6133177">
-              <caret line="35" column="159" selection-start-line="35" selection-start-column="159" selection-end-line="35" selection-end-column="159" />
+              <caret line="35" column="175" selection-start-line="35" selection-start-column="175" selection-end-line="35" selection-end-column="175" />
               <folding />
             </state>
           </provider>
@@ -482,7 +476,7 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6133177">
-          <caret line="35" column="159" selection-start-line="35" selection-start-column="159" selection-end-line="35" selection-end-column="159" />
+          <caret line="35" column="175" selection-start-line="35" selection-start-column="175" selection-end-line="35" selection-end-column="175" />
           <folding />
         </state>
       </provider>

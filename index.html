@@ -33,7 +33,7 @@
     <fieldset>
         <legend><strong>CHATROOM: </strong></legend>
     <ul class="chatbox">
-        <li ng-repeat="message in messages"><span ng-class="{'red': colorSelect=='Red', 'blue': colorSelect=='Blue', 'green': colorSelect=='Green'}">{{ message.from }}: {{ message.content }}</span></li>
+        <li ng-repeat="(key, message) in messages"><span ng-class="{'red': colorSelect=='Red', 'blue': colorSelect=='Blue', 'green': colorSelect=='Green'}">[{{ key }}] &nbsp; {{ message.from }}: {{ message.content }}</span></li>
     </ul>
     <form ng-submit="addMessage()">
         <label for="colorSelect">Color Select</label>
