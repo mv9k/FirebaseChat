@@ -8,7 +8,12 @@ app.factory("chatMessages", ["$resource",
         //var randomRoomId = Math.round(Math.random() * 100000000);
         //var ref = new Firebase("https://blinding-fire-7673.firebaseio.com/chatroom");
 
-        var resource = $resource("https://blinding-fire-7673.firebaseio.com/chatroom/:id.json");
+        var resource = $resource("https://blinding-fire-7673.firebaseio.com/chatroom/:id.json",
+            {id: '@id'},
+            {
+                update: {method: 'PATCH'}
+            }
+        );
 
         // this uses AngularFire to create the synchronized array
         //return $firebaseArray(ref);
@@ -72,7 +77,26 @@ app.controller("ChatCtrl", ["$scope", "chatMessages",
                 });
             });
 
+            //(new chatMessages()).$delete({id: key}, function() {
+            //    $scope.entry.$delete({id: key}, function() {
+            //        console.log('delete successful!');
+            //        $scope.messages = chatMessages.get();
+            //    });
+            //});
 
+        };
+
+        $scope.updateMessage = function(key) {
+            var newVal = window.prompt("New value:");
+            console.log("new value for key = " + key + ': ' + newVal);
+
+            $scope.entry = chatMessages.get({id: key}, function() {
+                $scope.entry.content = newVal;
+                $scope.entry.$update({id: key}, function() {
+                    console.log('update successful!');
+                    $scope.messages = chatMessages.get();
+                });
+            });
 
         };
 

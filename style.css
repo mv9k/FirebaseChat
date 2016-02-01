@@ -42,3 +42,8 @@ li {
 .key {
     color: grey;
 }
+.delbutton {
+    font-size: 12px;
+    background-color: black !important;
+    color: whitesmoke !important;
+}
