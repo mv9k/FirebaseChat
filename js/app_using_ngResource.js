@@ -64,6 +64,16 @@ app.controller("ChatCtrl", ["$scope", "chatMessages",
 
         $scope.deleteMessage = function(key) {
             console.log('deleting key=' + key);
+
+            $scope.entry = chatMessages.get({id: key}, function() {
+                $scope.entry.$delete({id: key}, function() {
+                    console.log('delete successful!');
+                    $scope.messages = chatMessages.get();
+                });
+            });
+
+
+
         };
 
         //// if the messages are empty, add something for fun!
