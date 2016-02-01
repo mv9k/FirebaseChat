@@ -2,15 +2,19 @@
     'use strict';
 
     angular.module('chatMessages', [])
-        .factory('chatMessages', ["$firebaseArray",
-            function($firebaseArray) {
+        .factory('chatMessages', ["$resource",
+            function($resource) {
                 // create a reference to the database location where we will store our data
                 var randomRoomId = Math.round(Math.random() * 100000000);
-                var ref = new Firebase("https://blinding-fire-7673.firebaseio.com/chatroom");
+                //var ref = new Firebase("https://blinding-fire-7673.firebaseio.com/chatroom");
 
+                var resource = $resource("https://blinding-fire-7673.firebaseio.com/chatroom/:id.json");
 
                 // this uses AngularFire to create the synchronized array
-                return $firebaseArray(ref);
+                //return $firebaseArray(ref);
+
+                // $resource
+                return resource;
             }
         ]);
 

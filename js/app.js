@@ -3,7 +3,7 @@
 
     angular.module('FirebaseChatApp', [
         "ngResource",
-        "authService",
+        //"authService",
         "chatController",
         "userController",
         "chatMessages"
