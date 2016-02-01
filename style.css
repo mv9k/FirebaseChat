@@ -39,3 +39,6 @@ button {
 li {
     list-style-type: none;
 }
+.key {
+    color: grey;
+}
