@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('FirebaseChatApp', [
-        "firebase",
+        "ngResource",
         "authService",
         "chatController",
         "userController",
