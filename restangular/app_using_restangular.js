@@ -1,9 +1,9 @@
 
-var app = angular.module("FirebaseChatApp", ["ngResource"]);
+var app = angular.module("FirebaseChatApp", ["restangular"]);
 
 // this factory returns a synchronized array of chat messages
-app.factory("chatMessages", ["$resource",
-    function($resource) {
+app.factory("chatMessages", ["restangular",
+    function(restangular) {
         // create a reference to the database location where we will store our data
         //var randomRoomId = Math.round(Math.random() * 100000000);
         //var ref = new Firebase("https://blinding-fire-7673.firebaseio.com/chatroom");
