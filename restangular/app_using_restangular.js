@@ -1,7 +1,6 @@
 
 var app = angular.module("FirebaseChatApp", ["restangular"]);
 
-// this factory returns a synchronized array of chat messages
 app.factory("chatMessages", ["Restangular",
     function(Restangular) {
 
@@ -18,37 +17,45 @@ app.factory("chatMessages", ["Restangular",
 ]);
 
 
-app.controller("ChatCtrl", ["$scope", "chatMessages", "Restangular",
+app.controller("ChatCtrl", ["$scope", "chatMessages",
 
     function($scope, chatMessages) {
         $scope.user = "user";
         $scope.username = '';
         $scope.colorSelect = 0;
+        var getMessage = function() {
+            chatMessages.one().get().then(function(response) {
+                $scope.messages = response.data.plain();
+                $scope.data = response.data;
+            });
+        };
 
 
-        chatMessages.one().get().then(function(response) {
-            $scope.messages = response.data.plain();
-        });
+        getMessage();
+
+
+
 
 
         $scope.addMessage = function() {
 
-
-            //chatMessages.save({
-            //    from: $scope.username,
-            //    content: $scope.message
-            //}, function() {
-            //    $scope.messages = chatMessages.get();
-            //});
-            //
-            //
-            //
-            //$scope.message = "";
+            chatMessages.post({
+                from: $scope.username,
+                content: $scope.message
+            }).then(function() {
+                console.log('add successful!');
+                getMessage();
+            });
 
         };
 
         $scope.deleteMessage = function(key) {
-            //console.log('deleting key=' + key);
+
+            console.log('deleting key=' + key);
+
+            $scope.data.customDELETE(key).then(function() {
+                getMessage();
+            });
             //
             //$scope.entry = chatMessages.get({id: key}, function() {
             //    $scope.entry.$delete({id: key}, function() {
@@ -62,6 +69,7 @@ app.controller("ChatCtrl", ["$scope", "chatMessages", "Restangular",
         };
 
         $scope.updateMessage = function(key) {
+
             //var newVal = window.prompt("New value:");
             //console.log("new value for key = " + key + ': ' + newVal);
             //
@@ -74,7 +82,6 @@ app.controller("ChatCtrl", ["$scope", "chatMessages", "Restangular",
             //});
 
         };
-
 
     }
 ]);
