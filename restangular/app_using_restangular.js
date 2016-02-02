@@ -43,7 +43,7 @@ app.controller("ChatCtrl", ["$scope", "chatMessages",
                 from: $scope.username,
                 content: $scope.message
             }).then(function() {
-                console.log('add successful!');
+                console.log('Add successful!');
                 getMessage();
             });
 
@@ -55,33 +55,26 @@ app.controller("ChatCtrl", ["$scope", "chatMessages",
 
             $scope.data.customDELETE(key).then(function() {
                 getMessage();
+                console.log('Deletion successful!');
             });
-            //
-            //$scope.entry = chatMessages.get({id: key}, function() {
-            //    $scope.entry.$delete({id: key}, function() {
-            //        console.log('delete successful!');
-            //        $scope.messages = chatMessages.get();
-            //    });
-            //});
-            //
-            //
+
 
         };
 
         $scope.updateMessage = function(key) {
 
-            //var newVal = window.prompt("New value:");
-            //console.log("new value for key = " + key + ': ' + newVal);
-            //
-            //$scope.entry = chatMessages.get({id: key}, function() {
-            //    $scope.entry.content = newVal;
-            //    $scope.entry.$update({id: key}, function() {
-            //        console.log('update successful!');
-            //        $scope.messages = chatMessages.get();
-            //    });
-            //});
+            var newVal = window.prompt("New value:");
+            console.log("new value for key = " + key + ': ' + newVal);
+
+            $scope.data.customOperation('patch', key, {}, {}, {
+                content: newVal
+                }).then(function() {
+                    getMessage();
+                    console.log('Update successful!');
+            });
 
         };
 
     }
+
 ]);
