@@ -2,38 +2,19 @@
 var app = angular.module("FirebaseChatApp", ["restangular"]);
 
 // this factory returns a synchronized array of chat messages
-app.factory("chatMessages", ["restangular",
-    function(restangular) {
-        // create a reference to the database location where we will store our data
-        //var randomRoomId = Math.round(Math.random() * 100000000);
-        //var ref = new Firebase("https://blinding-fire-7673.firebaseio.com/chatroom");
+app.factory("chatMessages", ["Restangular",
+    function(Restangular) {
 
-        var resource = $resource("https://blinding-fire-7673.firebaseio.com/chatroom/:id.json",
-            {id: '@id'},
-            {
-                update: {method: 'PATCH'}
-            }
-        );
+        var restangular = Restangular
+            .setBaseUrl('https://blinding-fire-7673.firebaseio.com/chatroom')
+            .setRequestSuffix('.json');
 
-        // this uses AngularFire to create the synchronized array
-        //return $firebaseArray(ref);
 
-        return resource;
+        return restangular;
+
     }
 ]);
 
-//app.service("authService", [
-//
-//    function authUser() {
-//
-//        var ref = new Firebase("https://blinding-fire-7673.firebasio.com/chatroom");
-//
-//
-//    }
-//
-//]);
-
-//app.controller("userCtrl", []);
 
 app.controller("ChatCtrl", ["$scope", "chatMessages",
     // we pass our new chatMessages factory into the controller
