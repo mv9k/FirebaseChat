@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="611ed2c0-26e7-4989-8a01-d62d6b4b0f48" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/restangular/js/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/restangular/js/app_backup.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/restangular/js/authService.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/restangular/js/chatController.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/restangular/js/chatFactory.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/restangular/js/userController.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/restangular/js/app_using_ngResource.js" afterPath="$PROJECT_DIR$/restangular/app_using_restangular.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restangular/indexREST.html" afterPath="$PROJECT_DIR$/restangular/indexREST.html" />
     </list>
     <ignored path="FirebaseChat.iws" />
@@ -31,20 +23,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="indexREST.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="indexREST.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/restangular/indexREST.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.25">
-              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.7535047">
+              <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app_using_restangular.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app_using_restangular.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/restangular/app_using_restangular.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08522727">
+            <state vertical-scroll-proportion="0.0">
               <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
               <folding />
             </state>
@@ -81,8 +73,8 @@
         <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/app_using_ngResource.js" />
-        <option value="$PROJECT_DIR$/restangular/indexREST.html" />
         <option value="$PROJECT_DIR$/restangular/app_using_restangular.js" />
+        <option value="$PROJECT_DIR$/restangular/indexREST.html" />
       </list>
     </option>
   </component>
@@ -150,6 +142,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="restangular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirebaseChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FirebaseChat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lodash" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -466,18 +472,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restangular/indexREST.html">
+    <entry file="file://$PROJECT_DIR$/restangular/app_using_restangular.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.25">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restangular/app_using_restangular.js">
+    <entry file="file://$PROJECT_DIR$/restangular/indexREST.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08522727">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.7535047">
+          <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
           <folding />
         </state>
       </provider>
