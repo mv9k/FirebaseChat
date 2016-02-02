@@ -1,0 +1,49 @@
+* {
+    font-family: Arial, sans-serif;
+}
+.red {
+    color: red;
+}
+.blue {
+    color: #3cc1ff;
+}
+.green {
+    color: #31cc5b;
+}
+
+fieldset {
+    min-height: 50px;
+    padding: 15px;
+    background-color: whitesmoke;
+}
+
+.chatbox {
+
+    padding: 35px;
+    color: whitesmoke;
+    background-color: #272727;
+}
+
+body {
+    background-color: slategray;
+}
+legend {
+    background-color: whitesmoke;
+}
+input {
+    font-size: 20px;
+}
+button {
+    font-size: 19px;
+}
+li {
+    list-style-type: none;
+}
+.key {
+    color: grey;
+}
+.delbutton {
+    font-size: 12px;
+    background-color: black !important;
+    color: whitesmoke !important;
+}
